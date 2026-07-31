@@ -1,0 +1,202 @@
+/* --- Variables & Themes --- */
+:root {
+  --bg-color: #6366f1;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --border-color: #e2e8f0;
+  --input-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary-color: #6366f1;
+  --primary-hover: #818cf8;
+  --danger-color: #f87171;
+  --danger-hover: #ef4444;
+  --border-color: #334155;
+  --input-bg: #0f172a;
+}
+
+/* --- Base Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  padding: 30px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Layout Container --- */
+.container, header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+header input {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  outline: none;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+/* --- Widget / Card Styles --- */
+.widget {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+/* Grid Layout for Lower Widgets */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+/* --- Greeting Widget --- */
+#greeting-widget {
+  text-align: center;
+}
+
+#greeting-time {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.1;
+}
+
+#greeting-date {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+#greeting-message {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/* --- Focus Timer Widget --- */
+#timer-widget {
+  text-align: center;
+}
+
+#timer-display {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 15px 0 20px;
+}
+
+/* --- Form Inputs & Buttons --- */
+input[type="text"],
+input[type="url"] {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+/* --- To-Do List Widget --- */
+#todo-widget input[type="text"] {
+  width: calc(100% - 80px);
+  margin-right: 8px;
+}
+
+#todo-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Quick Links Widget --- */
+#links-widget input[type="text"],
+#links-widget input[type="url"] {
+  width: 35%;
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+#links-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-delete-link {
+  background-color: transparent;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  border-radius: 50%;
+}
+
+.btn-delete-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}

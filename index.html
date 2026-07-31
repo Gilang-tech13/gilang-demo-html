@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar: Theme Toggle & Custom Name -->
+  <header style="max-width: 900px; margin: 0 auto 10px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <label for="username-input" style="font-weight: bold;">Name: </label>
+      <input type="text" id="username-input" placeholder="Your name...">
+    </div>
+    <button id="theme-toggle" type="button">🌙 Dark Mode</button>
+  </header>
+
+  <!-- Greeting Widget -->
+  <section class="widget" id="greeting-widget">
+    <div id="greeting-time"></div>
+    <div id="greeting-date"></div>
+    <div id="greeting-message"></div>
+  </section>
+
+  <!-- Focus Timer Widget -->
+  <section class="widget" id="timer-widget">
+    <div id="timer-display">25:00</div>
+    <button id="timer-start" type="button">Start</button>
+    <button id="timer-stop" type="button">Stop</button>
+    <button id="timer-reset" type="button">Reset</button>
+  </section>
+
+  <!-- To-Do List Widget -->
+  <section class="widget" id="todo-widget">
+    <input id="todo-input" type="text" placeholder="Add a new task..." maxlength="255" />
+    <button id="todo-add-btn" type="button">Add</button>
+    <div id="todo-error" style="color: red; margin-top: 5px;"></div>
+    <ul id="todo-list"></ul>
+  </section>
+
+  <!-- Quick Links Widget -->
+  <section class="widget" id="links-widget">
+    <input id="links-label-input" type="text" placeholder="Label" maxlength="50" />
+    <input id="links-url-input" type="url" placeholder="https://example.com" maxlength="2048" />
+    <button id="links-add-btn" type="button">Add Link</button>
+    <div id="links-error" style="color: red; margin-top: 5px;"></div>
+    <div id="links-panel"></div>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
